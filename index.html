@@ -29,6 +29,17 @@
   @media (max-width:880px){ .kd-nav-desktop{ display:none !important; } .kd-menu-btn{ display:flex !important; } }
   .kd-navlink.is-active .kd-dot{ display:block !important; }
   .kd-slot{ display:flex; align-items:center; justify-content:center; text-align:center; background:linear-gradient(135deg,#e7e0d3,#efe9df); border:1px solid #ddd5c7; }
+
+  /* 日本語の改行崩れ対策（特にスマホ） */
+  h1, h2, h3, h4 { text-wrap: balance; word-break: auto-phrase; line-break: strict; }
+  p, dd, li, td, span { text-wrap: pretty; line-break: strict; word-break: auto-phrase; }
+  @media (max-width: 600px){
+    /* 見出し内の強制改行をスマホでは無効化し、自然な折り返しに任せる */
+    h1 br, h2 br { display: none; }
+    /* ヒーロー等のリード文の強制改行もスマホでは無効化（泣き別れ防止） */
+    .kd-heroLead br { display: none; }
+  }
+
   .kd-slot span{ font-size:12.5px; letter-spacing:0.14em; color:#9b9384; font-family:'Cormorant Garamond',serif; font-style:italic; }
 </style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
@@ -107,7 +118,7 @@
         <h1 style="font-family:'Shippori Mincho B1',serif; font-weight:700; font-size:clamp(44px,8.4vw,128px); line-height:1.12; letter-spacing:0.04em; text-shadow:0 2px 40px rgba(0,0,0,0.32);">
           <span style="color:#7ec8f0;">空</span>を、つなぐ。
         </h1>
-        <p style="margin-top:30px; max-width:600px; font-size:clamp(15px,1.5vw,18px); line-height:2.1; color:rgba(246,244,239,0.92);">
+        <p class="kd-heroLead" style="margin-top:30px; max-width:600px; font-size:clamp(15px,1.5vw,18px); line-height:2.1; color:rgba(246,244,239,0.92);">
           発電所から、街へ。電気の大動脈を、高い空の上で確かにつなぐ。<br>送電線の架線・保守工事を手がける、滋賀・大津の電気工事会社です。
         </p>
         <div style="display:flex; flex-wrap:wrap; align-items:center; gap:16px; margin-top:40px;">
