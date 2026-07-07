@@ -31,6 +31,7 @@
   .kd-slot{ display:flex; align-items:center; justify-content:center; text-align:center; background:linear-gradient(135deg,#e7e0d3,#efe9df); border:1px solid #ddd5c7; }
   .kd-slot span{ font-size:12.5px; letter-spacing:0.14em; color:#9b9384; font-family:'Cormorant Garamond',serif; font-style:italic; }
 </style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 </head>
 <body>
 <div style="font-family:'Noto Sans JP',sans-serif; color:#1f1d1a; background:#f5f3ee; min-height:100vh; overflow-x:hidden;">
@@ -149,6 +150,17 @@
           私たちは高所での鉄塔組立・架線という、確かな技術と徹底した安全管理が求められる現場を担っています。一基一基、一線一線に責任を持ち、止まることのない電気の流れを、足元から支えます。
         </p>
       </div>
+    </section>
+
+
+    <!-- 3D TOWER -->
+    <section style="padding:clamp(10px,2vw,30px) clamp(20px,5vw,56px) clamp(64px,8vw,110px); max-width:1320px; margin:0 auto;">
+      <div style="display:flex; flex-direction:column; align-items:center; gap:10px; text-align:center; margin-bottom:6px;">
+        <span style="font-family:'Cormorant Garamond',serif; font-style:italic; font-size:13px; letter-spacing:0.24em; color:#b56a37;">Structure</span>
+        <span style="font-size:12px; letter-spacing:0.16em; color:#a39c8f;">私たちが組み上げる、送電鉄塔のかたち</span>
+      </div>
+      <canvas id="kd-tower" style="display:block; width:100%; height:clamp(320px,44vw,560px); cursor:grab; touch-action:pan-y;"></canvas>
+      <p style="text-align:center; font-size:11.5px; letter-spacing:0.12em; color:#b7b0a3; margin-top:2px; font-family:'Cormorant Garamond',serif; font-style:italic;">drag to rotate</p>
     </section>
 
     <!-- QUICK LINKS -->
@@ -292,21 +304,21 @@
     <section style="background:#ece7dd; padding:clamp(46px,5vw,76px) clamp(20px,5vw,56px) clamp(80px,9vw,130px);">
       <div style="max-width:1320px; margin:0 auto; display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:clamp(18px,2vw,26px);">
         <div data-card style="display:flex; flex-direction:column; gap:14px;">
-          <div class="kd-slot" style="width:100%; height:clamp(240px,30vw,340px); border-radius:6px;"><span>鉄塔組立の現場（写真準備中）</span></div>
+          <img src="images/work-tower.jpg" alt="鉄塔組立の現場" loading="lazy" style="width:100%; height:clamp(240px,30vw,340px); object-fit:cover; object-position:center; border-radius:6px; display:block;">
           <div style="display:flex; align-items:baseline; justify-content:space-between;">
             <span style="font-family:'Shippori Mincho B1',serif; font-weight:600; font-size:17px;">鉄塔組立工事</span>
             <span style="font-family:'Cormorant Garamond',serif; font-style:italic; font-size:12px; letter-spacing:0.14em; color:#a39c8f;">TOWER</span>
           </div>
         </div>
         <div data-card style="display:flex; flex-direction:column; gap:14px;">
-          <div class="kd-slot" style="width:100%; height:clamp(240px,30vw,340px); border-radius:6px;"><span>架線作業の様子（写真準備中）</span></div>
+          <img src="images/work-wiring.jpg" alt="架線作業の様子" loading="lazy" style="width:100%; height:clamp(240px,30vw,340px); object-fit:cover; object-position:center; border-radius:6px; display:block;">
           <div style="display:flex; align-items:baseline; justify-content:space-between;">
             <span style="font-family:'Shippori Mincho B1',serif; font-weight:600; font-size:17px;">架線工事</span>
             <span style="font-family:'Cormorant Garamond',serif; font-style:italic; font-size:12px; letter-spacing:0.14em; color:#a39c8f;">WIRING</span>
           </div>
         </div>
         <div data-card style="display:flex; flex-direction:column; gap:14px;">
-          <div class="kd-slot" style="width:100%; height:clamp(240px,30vw,340px); border-radius:6px;"><span>高所作業の様子（写真準備中）</span></div>
+          <img src="images/work-maint.jpg" alt="保守・点検の様子" loading="lazy" style="width:100%; height:clamp(240px,30vw,340px); object-fit:cover; object-position:center; border-radius:6px; display:block;">
           <div style="display:flex; align-items:baseline; justify-content:space-between;">
             <span style="font-family:'Shippori Mincho B1',serif; font-weight:600; font-size:17px;">保守・点検</span>
             <span style="font-family:'Cormorant Garamond',serif; font-style:italic; font-size:12px; letter-spacing:0.14em; color:#a39c8f;">MAINTENANCE</span>
@@ -381,7 +393,7 @@
     <section style="background:#ece7dd; padding:clamp(50px,6vw,90px) clamp(20px,5vw,56px) clamp(64px,7vw,110px);">
       <div style="max-width:1320px; margin:0 auto; display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:clamp(40px,6vw,80px); align-items:center;">
         <div style="position:relative;">
-          <div class="kd-slot" style="width:100%; height:clamp(360px,42vw,520px); border-radius:8px;"><span>代表写真（準備中）</span></div>
+          <img src="images/rep.jpg" alt="代表 片山 恭太" loading="lazy" style="width:100%; height:clamp(360px,42vw,520px); object-fit:cover; object-position:center; border-radius:8px; display:block;">
           <div style="position:absolute; left:0; bottom:24px; background:#1f1d1a; color:#f5f3ee; padding:14px 22px;">
             <span style="display:block; font-family:'Cormorant Garamond',serif; font-style:italic; font-size:12px; letter-spacing:0.18em; color:#e9b787;">Representative</span>
             <span style="display:block; font-family:'Shippori Mincho B1',serif; font-weight:600; font-size:18px; letter-spacing:0.08em; margin-top:2px;">代表　片山 恭太</span>
@@ -557,6 +569,59 @@
   }
   go('home');
   attachPress();
+})();
+</script>
+
+
+<script>
+(function(){
+  if(!window.THREE) return;
+  var canvas=document.getElementById('kd-tower'); if(!canvas) return;
+  function buildTower(){
+    var g=new THREE.Group();
+    var matInk=new THREE.LineBasicMaterial({color:0x1f1d1a,transparent:true,opacity:0.82});
+    var matCop=new THREE.LineBasicMaterial({color:0xb56a37,transparent:true,opacity:0.95});
+    var H=64, levels=11, segInk=[], segCop=[], prev=null;
+    function halfW(t){ return 12*(1-t)+3.0*t - 3.2*Math.sin(t*Math.PI)*0.0; }
+    function taper(t){ return 12*Math.pow(1-t,1.15)+2.8; }
+    function corners(y,hw){ return [new THREE.Vector3(-hw,y,-hw),new THREE.Vector3(hw,y,-hw),new THREE.Vector3(hw,y,hw),new THREE.Vector3(-hw,y,hw)]; }
+    for(var i=0;i<=levels;i++){
+      var t=i/levels, y=-H/2+t*H, hw=taper(t), c=corners(y,hw), k;
+      for(k=0;k<4;k++) segInk.push(c[k],c[(k+1)%4]);
+      if(prev){
+        for(k=0;k<4;k++) segInk.push(prev[k],c[k]);
+        for(k=0;k<4;k++){ segInk.push(prev[k],c[(k+1)%4]); segInk.push(prev[(k+1)%4],c[k]); }
+      }
+      prev=c;
+    }
+    function arm(ty,len){
+      var y=-H/2+ty*H, hw=taper(ty);
+      [-1,1].forEach(function(sx){
+        var xIn=sx*hw, tip=new THREE.Vector3(sx*(hw+len),y,0);
+        var f1=new THREE.Vector3(xIn,y+1.4,-hw+1), f2=new THREE.Vector3(xIn,y+1.4,hw-1);
+        var b1=new THREE.Vector3(xIn,y-1.4,-hw+1), b2=new THREE.Vector3(xIn,y-1.4,hw-1);
+        segCop.push(f1,tip); segCop.push(f2,tip); segCop.push(b1,tip); segCop.push(b2,tip);
+        segCop.push(new THREE.Vector3(sx*(hw+len),y+1.4,0), new THREE.Vector3(sx*(hw+len),y-1.4,0));
+      });
+    }
+    arm(0.72,10); arm(0.82,8.4); arm(0.92,6.6);
+    g.add(new THREE.LineSegments(new THREE.BufferGeometry().setFromPoints(segInk),matInk));
+    g.add(new THREE.LineSegments(new THREE.BufferGeometry().setFromPoints(segCop),matCop));
+    return g;
+  }
+  var renderer=new THREE.WebGLRenderer({canvas:canvas,alpha:true,antialias:true});
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio||1,2));
+  var scene=new THREE.Scene();
+  var camera=new THREE.PerspectiveCamera(38,1,0.1,1000); camera.position.set(0,4,122);
+  var tower=buildTower(); tower.rotation.x=-0.09; scene.add(tower);
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var dragging=false,lastX=0,vy=0.0034;
+  function resize(){ var w=canvas.clientWidth,h=canvas.clientHeight; if(!w||!h) return; renderer.setSize(w,h,false); camera.aspect=w/h; camera.updateProjectionMatrix(); }
+  window.addEventListener('resize',resize); resize();
+  canvas.addEventListener('pointerdown',function(e){dragging=true;lastX=e.clientX;canvas.style.cursor='grabbing';});
+  window.addEventListener('pointerup',function(){dragging=false;canvas.style.cursor='grab';});
+  window.addEventListener('pointermove',function(e){ if(!dragging)return; tower.rotation.y+=(e.clientX-lastX)*0.008; lastX=e.clientX; });
+  (function tick(){ requestAnimationFrame(tick); if(!dragging&&!reduce) tower.rotation.y+=vy; renderer.render(scene,camera); })();
 })();
 </script>
 
